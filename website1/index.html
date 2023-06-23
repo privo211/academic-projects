@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<title>Priyanshu Vora</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+    * {
+    font-family: 'Rubik', sans-serif;
+      box-sizing: border-box;
+    }
+
+    :root{
+        --main-color: rgb(50,142,246);
+        --font-color: rgb(1, 28, 58);
+        --background-color:rgb(4, 81, 168);
+    }
+    
+    body {
+      padding: 5px;
+      background: var(--main-color);
+    }
+    
+    .header {
+      padding: 5px;
+      text-align: center;
+      background: var(--background-color);
+      border-radius: 10px;
+    }
+    
+    .header h1 {
+      font-size: 40px;
+    }   
+    
+    .nav {
+      overflow: hidden;
+      background-color: var(--font-color);
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+    
+    #aboutme img{
+        float: right;
+    }
+    
+    #aboutme h2{
+        text-align: center;
+        font-size: 34px;
+    }
+
+    #aboutme h3{
+        text-decoration: underline;
+        font-size: 25px;
+    }
+    
+    .button:hover {
+      background-color: rgb(213, 229, 253);
+      color: var(--font-color);
+    }
+    
+    .leftcolumn {   
+      float: left;
+      width: 50%;
+    }
+
+    .button {
+        background-color: var(--font-color);
+        border: none;
+        color: white;
+        padding: 15px 32px; 
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        border-radius: 10px;
+    }
+    
+    .img {
+      background-color: rgb(21, 21, 21);
+      width: 100%;
+      padding: 20px;
+    }
+    
+    #info{
+        font-size: 18.5px;
+    }
+
+    #pastpro a{
+        color: black;
+    }
+    
+    .contents {
+      background: var(--background-color);
+      padding: 20px;
+      margin-top: 20px;
+      height: 100%;
+      border-radius: 10px;
+    }
+
+    #home img{
+        float: right;
+    }
+    
+    #home h2{
+        text-align: center;
+        font-size: 35px;
+    }
+
+    #home h3{
+        text-decoration: underline;
+    }
+
+    .footer {
+      padding: 20px;
+      text-align: center;
+      background: var(--background-color);
+      margin-top: 20px;
+      border-radius: 10px;
+    }
+    
+    @media screen and (max-width: 800px) {
+      .leftcolumn, .rightcolumn {   
+        width: 100%;
+        padding: 0;
+      }
+    }
+
+    @media screen and (max-width: 400px) {
+      .nav a {
+        float: none;
+        width: 100%;
+      }
+    }
+
+    .container{
+        background: var(--background-color);
+        padding: 80px;
+        padding-top: 5px;
+        align-items: center;
+        border-radius: 10px;
+        margin-top: 20px;
+    }
+
+    .input{
+        border-radius: 20px;
+        font-size: 15px;
+    }
+
+    #rnav{
+        float: right;
+    }
+
+    #login{
+        padding-top: 50px;
+    }
+
+    #signup{
+        padding-top: 50px;
+    }
+
+    </style>
+<body>
+
+<div class="header">
+    <h1>PRIYANSHU VORA</h1>
+    <h4>COMPUTER SCIENCE STUDENT</h4>
+    <h4>BROCK UNIVERSITY</h4>
+  </div>
+
+<div class="nav">
+  <button class="button" onclick="single('home')">HOME</button>
+  <button class="button" onclick="single('courses')">COURSES</button>
+  <button class="button" onclick="single('aboutme')">ABOUT ME</button>
+  <button class="button" onclick="single('cv')">CV</button>
+  <button class="button" onclick="single('pastpro')">PAST PROJECTS</button>
+  <div id="rnav">
+  <button class="button" onclick="single('login')">LOGIN</button>
+  <button class="button" onclick="single('signup')">SIGN UP</button>
+  <button class="button" onclick="changeColor()">COLOR</button>
+</div>
+  
+</div>
+
+<div id="home" class="container">
+    <h2>PRIYANSHU VORA</h2>
+    <img src="me.jpg" alt="Priyanshu Vora's photo" width=40% height=30%>
+    <h3>ACADEMIC INTERESTS: </h3>
+    <p id="info">
+        <ul>
+            <li>Data Structures & Algorithms</li>
+            <li>Object-Oriented Programming</li>
+            <li>Internet Technologies</li>
+        </ul>
+    </p>
+    <h3>CONTACT: </h3>
+      <p id="info">
+        Computer Science Student<br>
+        Brock University<br><br>
+        Phone: +1-289-547-5358 <br>
+        E-mail: pv20ma@brocku.ca <br><br>
+        Mailing Address: <br>
+        78B Townline Rd W, <br>
+        St. Catharines, ON, L2T 1P6 <br>
+      </p>
+    
+</div>
+
+<div id="courses" class="container" style="display:none">
+    <h2>LIST OF COURSES COMPLETED/CURRENTLY ENROLLED IN:</h2>
+    <ol>
+      <li>COSC 1P50</li>
+      <li>COSC 1P02</li>
+      <li>COSC 1P03</li>
+      <li>COSC 2P03</li>
+      <li>COSC 2P12</li>
+      <li>COSC 2P89</li>
+      <li>MATH 1P12</li>
+      <li>MATH 1P66</li>
+      <li>MATH 1P67</li>
+      <li>STAT 1P98</li>
+      <li>ECON 1P91</li>
+      <li>ECON 1P92</li>
+      <li>VISA 1Q99</li>
+      <li>ASTR 1P02</li>
+      <li>ERSC 1P94</li>
+      <li>MUSI 1P55</li>
+    </ol>
+</div>
+
+<div id="aboutme" class="container" style="display:none">
+    <h2>PRIYANSHU VORA</h2>
+    <img src="me2.jpg" alt="Priyanshu Vora's photo" width=50% height="40%">
+    <h3>MY EDUCATION: </h3>
+      <p id="info">
+        Science Student,<br>
+        Delhi Public School, Bopal, Ahmedbabad<br><br>
+        2005 - 2020<br>
+      </p>
+    <h3>MY INTERESTS: </h3>
+    <ul>
+        <li>Photography</li>
+        <li>Music</li>
+        <li>Aviation</li>
+        <li>Quizzing</li>
+        <li>Comedy</li>
+    </ul>
+</div>
+
+<div id="cv" class="container" style="display:none">
+    <h2>CURRICULUM VITAE</h2>
+    <img src="cv.jpg" alt="Priyanshu Vora's CV" width=100% height="100%">
+</div>
+
+<div id="pastpro" class="container" style="display:none">
+    <h2>LIST OF PAST PROJECTS:</h2>
+    <ul>
+        <li>A1: <a href="https://www.cosc.brocku.ca/~pv20ma/A1/index.html">Personal Website - HTML</a></li><br>
+        <li>A2: <a href="https://www.cosc.brocku.ca/~pv20ma/A2/index.html">Unresponsive Webpage Layout</a></li><br>
+        <li>A3: <a href="https://www.cosc.brocku.ca/~pv20ma/A3/tikka/index.html">Responsive Webpage Layout</a></li><br>
+        <li>A3: <a href="https://www.cosc.brocku.ca/~pv20ma/A3/tikka/form.html">Registration Form</a></li><br>
+        <li>A4: <a href="https://www.cosc.brocku.ca/~pv20ma/A4/yipee/login.html">Login Verification Form</a></li>
+    </ul>
+</div>
+
+<div id="login" class="container" style="display:none">
+    <form id="login1" method="post">    
+        <label><b>USERNAME:  </b></label>    
+        <input class="input" type="text" name="user" id="user" placeholder="Enter your username">    
+        <br><br>    
+        <label><b>PASSWORD:  </b></label>    
+        <input class="input" type="password" name="pass" id="pass" placeholder="Enter your password">    
+        <br><br>    
+        <input class="button" type="button" name="login" id="login2" value="LOG IN">       
+        <br><br> 
+    </form>
+</div>
+
+<div id="signup" class="container" style="display:none">
+    <form id="signup1" method="post">    
+        <label><b>USERNAME:  </b></label>    
+        <input class="input" type="text" name="user" id="user" placeholder="Enter new username">    
+        <br><br>    
+        <label><b>PASSWORD:  </b></label>    
+        <input class="input" type="password" name="pass" id="pass" placeholder="Enter a password">    
+        <br><br> 
+        <label><b>RETYPE PASSWORD:  </b></label>    
+        <input class="input" type="password" name="repass" id="repass" placeholder="Enter password again">    
+        <br><br>    
+        <input class="button" type="button" name="log" id="log" value="SIGN UP">       
+        <br><br> 
+    </form>
+</div>
+
+<script>
+function single(page) {
+  var i;
+  var x = document.getElementsByClassName("container");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  document.getElementById(page).style.display = "block";  
+}
+
+var flag=true;
+function changeColor(){
+
+    if (flag) {
+        document.body.style.setProperty("--main-color", "#ff1f1f");
+        document.body.style.setProperty("--font-color", "#9b0000");
+        document.body.style.setProperty("--background-color", "#ff8080");
+    }
+    else{
+        document.body.style.setProperty("--main-color", "#328EF6");
+        document.body.style.setProperty("--font-color", "#011C3A");
+        document.body.style.setProperty("--background-color", "#0451A8");
+
+    }
+
+    flag = flag ? false : true;
+}
+    
+
+</script>
+<div class="footer">
+   <button class="button" type="button">DELETE ACCOUNT</button>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,231 @@
+ <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Registration Form</title>
+    <meta charset="UTF-8" />
+
+    <style>
+      body {
+        background-image: linear-gradient(
+          to bottom,
+          rgb(36, 39, 39),
+          rgb(0, 0, 0)
+        );
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding-top: 25px;
+        padding-bottom: 25px;
+      }
+
+      form {
+        border-radius: 25px;
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-bottom: 25px;
+        display: inline-block;
+        background-image: linear-gradient(
+          to bottom right,
+          rgb(18, 92, 161),
+          violet
+        );
+        position: relative;
+        overflow: hidden;
+        margin: 0px auto;
+        width: 500px;
+      }
+
+      body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+      }
+
+      .flexbox {
+        display: flex;
+      }
+
+      input[type="text"],
+      [type="email"],
+      [type="telephone"] {
+        border: none;
+        outline: none;
+        display: inline-block;
+        height: 34px;
+        vertical-align: middle;
+        position: relative;
+        top: 5px;
+        right: 9px;
+        border-radius: 22px;
+        box-sizing: border-box;
+        padding: 0px 18px;
+      }
+
+      #books {
+        border: none;
+        outline: none;
+        display: inline-block;
+        height: 34px;
+        vertical-align: middle;
+        position: relative;
+        top: 5px;
+        right: 9px;
+        border-radius: 22px;
+        box-sizing: border-box;
+        padding: 0px 18px;
+      }
+
+      #register {
+        background-color: rgb(255, 255, 255);
+        border: none;
+        outline: none;
+        display: inline-block;
+        height: 34px;
+        vertical-align: middle;
+        position: relative;
+        top: 5px;
+        right: 9px;
+        border-radius: 22px;
+        box-sizing: border-box;
+        padding: 0px 18px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <form id="myForm" action="">
+      <div>
+        <center>
+          <h1 class="fonts">Registration Form</h1>
+          <p class="fonts">Please fill in all fields and click on Register</p>
+        </center>
+        <h2 class="fonts">User Information</h2>
+      </div>
+
+      <div>
+        <label id="font" class="fixed" for="fname">First Name:</label>
+        <br/>
+        <input type="text" id="fname" placeholder="Enter your first name" />
+        <br/>
+        <p style="color: red;" id="fnameerror"></p>
+      </div>
+
+      <div>
+        <label id="font" class="fixed" for="lname">Last Name:</label>
+        <br/>
+        <input type="text" id="lname" placeholder="Enter your last name" />
+        <br/>
+        <p style="color: red;" id="lnameerror"></p>
+      </div>
+
+      <div>
+        <label id="font" class="fixed" for="email">E-mail:</label>
+        <br/>
+        <input
+          type="email"
+          id="email"
+          placeholder="Enter your e-mail address"/>
+        <br/>
+        <p style="color: red;" id="emailerror"></p>
+      </div>
+
+      <div>
+        <label id="font" class="fixed" for="phone">Phone Number:</label>
+        <br />
+        <input type="telephone" id="phone" placeholder="(555) 555-5555" />
+        <br /><br/>
+      </div>
+
+      <div>
+        <h2 class="fonts">Publications</h2>
+
+        <label for="books">Which book would you like information about?</label>
+        <br />
+
+        <select name="books" id="books" onchange="displayBook()">
+          <option value="default" selected hidden disabled>
+            -----------------------pick a book---------------------
+          </option>
+          <option value="The Sun Also Rises by Ernest Hemingway">The Sun Also Rises by Ernest Hemingway</option>
+          <option value="Beneath the Bleeding by T.S. Eliot">Beneath the Bleeding by T.S. Eliot</option>
+          <option value="Catcher in the Rye by J.D. Salinger">Catcher in the Rye by J.D. Salinger</option>
+          <option value="The Great Gatsby by Scott Fitzgerald">The Great Gatsby by Scott Fitzgerald</option>
+          <option value="The Da Vinci Code by Dan Brown">The Da Vinci Code by Dan Brown</option>
+        </select>
+        <br>
+        <p style="color: rgb(22, 221, 22);" id="selected"></p>
+      </div>
+
+      <div>
+        <h2 class="fonts">Operating System</h2>
+        <label id="font" for="os">Which operating system do you use?</label>
+        <br />
+        <br />
+        <input type="radio" name="os" id="win" value="Windows" />
+        <label id="font" for="win">Windows</label>
+        <input type="radio" name="os" id="mac" value="Mac OS X" />
+        <label id="font" for="mac">Mac OS X</label>
+        <input type="radio" name="os" id="lin" value="Linux" />
+        <label id="font" for="lin">Linux</label>
+        <input type="radio" name="os" id="other" value="Other" />
+        <label id="font" for="other">Other</label>
+      </div>
+
+      <br />
+      <br />
+      <button id="register" type="submit" value="submit">Register</button>
+    </form>
+
+    <script>
+      document.getElementById("myForm").onsubmit = function(){
+
+        var fname = document.getElementById('fname').value;
+        var lname = document.getElementById('lname').value;
+        var email = document.getElementById('email').value;
+
+        var register = true;
+
+        if(fname=="" || fname==null){
+          document.getElementById("fnameerror").innerHTML = "First name is required";
+          register = false;
+        }
+
+        if(lname=="" || lname==null){
+          document.getElementById("lnameerror").innerHTML = "Last name is required";
+          register = false;
+        }
+
+        if(email=="" || email==null){
+          document.getElementById("emailerror").innerHTML = "E-mail is required";
+          register = false;
+        }
+
+        if(register == false){
+          alert("Please correct the errors on the page and submit again.");
+        }
+
+        return register;
+      }
+
+      function removeError(){
+        document.getElementById(this.id + "error").innerHTML = "";
+      }
+      document.getElementById("fname").onkeyup = removeError;
+      document.getElementById("lname").onkeyup = removeError;
+      document.getElementById("email").onkeyup = removeError; 
+
+      function displayBook(){
+        var book = document.getElementById("books").value;
+        
+        document.getElementById("selected").innerHTML = "You selected: " + book;
+
+      }
+      
+    </script>
+  </body>
+</html>

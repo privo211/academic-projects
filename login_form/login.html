@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+        background-image: linear-gradient(to bottom ,rgb(36, 39, 39),rgb(0, 0, 0));
+        height: 100%;
+        width: 100%;
+        padding-top: 250px;
+        padding-bottom: 250px;
+      }
+
+      form {
+        border-radius: 25px;
+        border-style: groove blue;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 15px;
+        padding-bottom: 25px;
+        background-image: linear-gradient(to bottom right,rgb(18, 92, 161),violet);
+        width: 500px;
+      }
+    </style>
+</head>
+<body>
+    <center>
+        <form action="https://www.cosc.brocku.ca/~pv20ma/cgi-bin/checkpass.cgi" method="post">
+            <p>
+                <h1>Please Login!</h1>
+            </p>
+            <p>
+                <label for="user">Username:</label>
+                <input type="text" name="user" id="user" placeholder="Enter your username">
+            </p>
+            <p>
+                <label for="user">Password:</label>
+                <input type="password" name="pass" id="pass" placeholder="Enter your password">
+            </p>
+            <p>
+                <button type="submit">Login</button>
+            </p>
+        </form>
+    </center>
+</body>
+</html>
